@@ -1,4 +1,4 @@
-FROM mdstudio/cerise
+FROM mdstudio/cerise:develop
 MAINTAINER Lourens Veen <l.veen@esciencecenter.nl>
 
 COPY api /home/cerise/api
