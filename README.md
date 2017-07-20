@@ -4,6 +4,53 @@ This repository contains a Cerise specialisation for MDStudio and DAS5.
 
 It's work in progress.
 
+## Running
+
+### Install the service via Docker
+
+Get the specialised service from Docker:
+
+```bash
+docker pull mdstudio/cerise-mdstudio-das5:develop
+```
+
+### Start it
+
+```bash
+docker run --name=cerise-mdstudio-das5 -p 29593-29594:29593-29594 --env CERISE_USERNAME=<username> --env CERISE_PASSWORD=<password> mdstudio/cerise-mdstudio-das5:develop
+```
+This will give a warning about the Slurm version not being supported, which
+you can safely ignore.
+
+If this is the first time you run this Cerise specialisation, it will stage a
+bunch of files to a directory named `.ceries` in your home directory on DAS-5.
+Uploading is very slow (this is in the process of being fixed), so it may take
+five or six minutes for the service to start processing jobs. You can submit
+them right away though.
+
+Note that inserting the user name and password via an environment variable is
+not ideal, amongst others it leaves a copy of them in your `~/.bash_history`
+(from where you may want to delete it now, although it should be only readable
+to you yourself). Overlay-mounting a file would be another option, but that
+means that the username and password are stored on disk. If we start the service
+from Python using docker-py, then the environment variables would probably be
+the better option.
+
+### Run a job
+
+Now we can submit an example Gromit/GROMACS job, using a virtual environment to
+keep the dependencies away from the rest of the system:
+
+```bash
+cd examples/
+virtualenv -p python3 venv
+. venv/bin/activate
+pip3 install bravado
+python3 run_md.py
+```
+
+This will take about 2 minutes to complete.
+
 
 ## Legal Notes
 
