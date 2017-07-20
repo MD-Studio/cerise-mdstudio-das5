@@ -1,6 +1,6 @@
 compute-resource:
   files:
-    scheme: ssh
+    scheme: sftp
     location: fs0.das5.cs.vu.nl
     path: /home/$CERISE_USERNAME/.cerise
 
