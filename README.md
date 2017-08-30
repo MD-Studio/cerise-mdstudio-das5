@@ -23,7 +23,7 @@ This will give a warning about the Slurm version not being supported, which
 you can safely ignore.
 
 If this is the first time you run this Cerise specialisation, it will stage a
-bunch of files to a directory named `.ceries` in your home directory on DAS-5.
+bunch of files to a directory named `.cerise` in your home directory on DAS-5.
 Uploading is very slow (this is in the process of being fixed), so it may take
 five or six minutes for the service to start processing jobs. You can submit
 them right away though.
