@@ -1,3 +1,5 @@
+[![Docker Build Statu](https://img.shields.io/docker/build/mdstudio/cerise-mdstudio-das5.svg)](https://hub.docker.com/r/mdstudio/cerise-mdstudio-das5/)
+
 # Cerise specialisation for MDStudio and DAS5
 
 This repository contains a Cerise specialisation for MDStudio and DAS5.
