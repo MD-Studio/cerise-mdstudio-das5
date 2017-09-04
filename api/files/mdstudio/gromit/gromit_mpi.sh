@@ -1549,7 +1549,7 @@ function MDRUNNER ()
 
     # Set up the mdrun command and start it in the background 
     if (($NP != 1)) ; then
-        NRANKS="-np 4 --map-by node -v --display-map --display-allocation"
+        NRANKS="-np 4 --map-by ppr:2:socket -v --display-map --display-allocation"
     else
         NRANKS=""
     fi

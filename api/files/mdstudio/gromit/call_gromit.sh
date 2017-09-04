@@ -1,7 +1,14 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
-shift
+PROTEIN_PDB="$2"
+PROTEIN_TOP="$3"
+PROTEIN_ITP="$4"
+LIGAND_PDB="$5"
+LIGAND_TOP="$6"
+LIGAND_ITP="$7"
+FORCE_FIELD="$8"
+SIM_TIME="$9"
 
 module load fftw3/openmpi/gcc/64/3.3.4
 module load cuda75/blas/7.5.18
@@ -14,5 +21,5 @@ GMXRC_FILE="$CERISE_API_FILES/mdstudio/gromacs/gromacs-2016.3/bin/GMXRC.bash"
 GROMIT="$CERISE_API_FILES/mdstudio/gromit/gromit_mpi.sh"
 
 . $GMXRC_FILE
-$GROMIT -gmxrc $GMXRC_FILE $*
+$GROMIT -gmxrc $GMXRC_FILE -vsite -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP -ff $FORCE_FIELD -time $SIM_TIME
 

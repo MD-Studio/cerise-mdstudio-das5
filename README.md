@@ -1,4 +1,4 @@
-[![Docker Build Statu](https://img.shields.io/docker/build/mdstudio/cerise-mdstudio-das5.svg)](https://hub.docker.com/r/mdstudio/cerise-mdstudio-das5/)
+[![Docker Build Status](https://img.shields.io/docker/build/mdstudio/cerise-mdstudio-das5.svg)](https://hub.docker.com/r/mdstudio/cerise-mdstudio-das5/)
 
 # Cerise specialisation for MDStudio and DAS5
 
