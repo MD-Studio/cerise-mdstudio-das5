@@ -70,7 +70,7 @@ setenv MANPATH $tmppath
 # things in separate vars, so we can remove them later.
 # If you move gromacs, change the first line.
 ##########################################################
-setenv GMXPREFIX $HOME/.cerise/api/files/mdstudio/gromacs/gromacs-2016.3
+setenv GMXPREFIX $HOME/.cerise/api/files/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromacs/gromacs-2016.3
 setenv GMXBIN ${GMXPREFIX}/bin
 setenv GMXLDLIB ${GMXPREFIX}/lib64
 setenv GMXMAN ${GMXPREFIX}/share/man
