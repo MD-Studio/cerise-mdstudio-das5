@@ -26,9 +26,8 @@ you can safely ignore.
 
 If this is the first time you run this Cerise specialisation, it will stage a
 bunch of files to a directory named `.cerise` in your home directory on DAS-5.
-Uploading is very slow (this is in the process of being fixed), so it may take
-five or six minutes for the service to start processing jobs. You can submit
-them right away though.
+This may take a bit of time, so it may take a moment for the service to start
+processing jobs. You can submit them right away though.
 
 Note that inserting the user name and password via an environment variable is
 not ideal, amongst others it leaves a copy of them in your `~/.bash_history`
@@ -60,10 +59,9 @@ This will take about 2 minutes to complete.
 
 This repository contains a copy of [GROMACS](http://www.gromacs.org) 2016.3 in
 both source and binary (compiled for DAS5/VU) form. The binaries are in the
-api/files/mdstudio/gromacs/, and they were compiled from the
-gromacs-2016.3.tar.gz source archive in the gromacs/ directory. The GMXRC.*
-scripts were modified to point to the installed location, according to the
-instructions in them.
+mdstudio/gromacs/, and they were compiled from the gromacs-2016.3.tar.gz source
+archive in the gromacs/ directory. The GMXRC.* scripts were modified to point to
+the installed location, according to the instructions in them.
 
 GROMACS is Free Software, available under the GNU Lesser General Public License
 (LGPL), version 2.1. You can redistribute it and/or modify it under the terms of
