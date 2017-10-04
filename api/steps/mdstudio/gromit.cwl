@@ -49,11 +49,33 @@ outputs:
   gromiterr:
     type: File
     outputBinding: { glob: gromit.err }
-  gromacslog:
+  gromacslog_step2:
     type: File
-    outputBinding:
-      glob: 09-MD.log
+    outputBinding: { glob: 02-PBC.log }
+  gromacslog_step3:
+    type: File
+    outputBinding: { glob: 03-EMv.log }
+  gromacslog_step4:
+    type: File
+    outputBinding: { glob: 04-SOLVATION.log }
+  gromacslog_step5:
+    type: File
+    outputBinding: { glob: 05-EMs.log }
+  gromacslog_step6a:
+    type: File
+    outputBinding: { glob: 06-PR-NVT-1.log }
+  gromacslog_step6b:
+    type: File
+    outputBinding: { glob: 06-PR-NVT-2.log }
+  gromacslog_step7:
+    type: File
+    outputBinding: { glob: 07-NPT-1.log }
+  gromacslog_step8:
+    type: File
+    outputBinding: { glob: 08-MD-PRE.log }
+  gromacslog_step9:
+    type: File
+    outputBinding: { glob: 09-MD.log }
   trajectory:
     type: File
-    outputBinding:
-      glob: "*-MD.part0001.trr"
+    outputBinding: { glob: "*-MD.part0001.trr" }
