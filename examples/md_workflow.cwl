@@ -19,7 +19,7 @@ outputs:
     outputSource: gromit/gromiterr
   gromacslog:
     type: File
-    outputSource: gromit/gromacslog
+    outputSource: gromit/gromacslog_step9
   trajectory:
     type: File
     outputSource: gromit/trajectory
@@ -36,4 +36,4 @@ steps:
       ligand_itp: ligand_itp
       force_field: force_field
       sim_time: sim_time
-    out: [gromitout,gromiterr,gromacslog,trajectory]
+    out: [gromitout,gromiterr,gromacslog_step9,trajectory]
