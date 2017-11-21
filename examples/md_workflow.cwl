@@ -26,7 +26,10 @@ outputs:
   energy:
     type: File
     outputSource: gromit/energy
-  
+  mdp:
+    type: File
+    outputSource: gromit/mdp
+   
 
 steps:
   gromit:
