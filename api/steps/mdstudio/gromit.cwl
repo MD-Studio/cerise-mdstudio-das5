@@ -84,4 +84,4 @@ outputs:
     outputBinding: { glob: "*-MD.part0001.edr" }
   mdp:
     type: File
-    outputBinding: { glob: "md-prod.mdp" }
+    outputBinding: { glob: "md-pre-out.mdp" }
