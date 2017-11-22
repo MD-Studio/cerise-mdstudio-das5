@@ -28,8 +28,7 @@ outputs:
     outputSource: gromit/energy
   mdp:
     type: File
-    outputSource: gromit/mdp
-   
+    outputSource: gromit/mdp   
 
 steps:
   gromit:
@@ -43,4 +42,4 @@ steps:
       ligand_itp: ligand_itp
       force_field: force_field
       sim_time: sim_time
-    out: [gromitout,gromiterr,gromacslog_step9,trajectory, energy]
+    out: [gromitout,gromiterr,gromacslog_step9,trajectory, energy, mdp]
