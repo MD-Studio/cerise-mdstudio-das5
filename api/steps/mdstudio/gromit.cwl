@@ -41,6 +41,8 @@ inputs:
     default: 0.0001
     inputBinding:
       position: 8
+  include_itp:
+    type: File?
 
 outputs:
   gromitout:
