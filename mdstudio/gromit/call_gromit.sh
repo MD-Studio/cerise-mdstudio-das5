@@ -7,8 +7,9 @@ PROTEIN_ITP="$4"
 LIGAND_PDB="$5"
 LIGAND_TOP="$6"
 LIGAND_ITP="$7"
-FORCE_FIELD="$8"
-SIM_TIME="$9"
+INCLUDE_IPT="$8"
+FORCE_FIELD="$9"
+SIM_TIME="$10"
 
 module load fftw3/openmpi/gcc/64/3.3.4
 module load cuda75/blas/7.5.18

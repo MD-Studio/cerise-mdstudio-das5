@@ -1,17 +1,30 @@
-import cerise_client.service as cs
+from __future__ import print_function
 
 from time import sleep
+import cerise_client.service as cc
+
+
+def remove_previous(srv):
+    """Remove old jobs"""
+    jobs = srv.list_jobs()
+    if jobs:
+        for j in jobs:
+            print("removing: ", j.name)
+            srv.destroy_job(j)
 
 
 # Create a new service for user myuser, with given cluster credentials
-srv = cs.create_managed_service(
+srv = cc.require_managed_service(
         'cerise-mdstudio-das5-myuser', 29593,
         'mdstudio/cerise-mdstudio-das5:develop',
-        'username',
-        'password')
+        'fzapata',
+        'Quam#Hask86')
 
+cc.start_managed_service(srv)
 # Create a job and set workflow and inputs
-job = srv.create_job('example_job')
+remove_previous(srv)
+print("Creating job")
+job = srv.create_job('example_job123')
 job.set_workflow('md_workflow.cwl')
 job.add_input_file('protein_pdb', 'CYP19A1vs.pdb')
 job.add_input_file('protein_top', 'CYP19A1vs.top')
@@ -23,19 +36,22 @@ job.set_input('force_field', 'amber99SB')
 job.set_input('sim_time', 0.001)
 
 # Start it
+print("Running job")
 job.run()
 
 # Give the service a chance to stage things
-sleep(20)
+print("Waiting")
+while job.state == 'Waiting':
+    sleep(1)
 
-persisted_srv = cs.service_to_dict(srv)   # store this somewhere, in a database
+# store this somewhere, in a database
+persisted_srv = cc.service_to_dict(srv)
 persisted_job_id = job.id          # this as well
 
 # Stop the service
-cs.stop_managed_service(srv)
+cc.stop_managed_service(srv)
 
 # Here, you would quit Python, shut down the computer, etc.
-
 # To resume where we left off
 srv = cs.service_from_dict(persisted_srv)
 if not cs.managed_service_is_running(srv):
@@ -50,11 +66,12 @@ while job.is_running():
 # Process output
 if job.state == 'Success':
     job.outputs['trajectory'].save_as('CYP19A1vs_BHC89.trr')
-    job.outputs['energy'].save_as('CYP19A1vs_BHC89.edr')
+    job.outputs['energy'].save_as('energy.edr')
+    job.outputs['mdp'].save_as('md-prod.mdp')
 else:
     print('There was an error: ' + job.state)
     print(job.log)
 
 # Clean up the job and the service
 srv.destroy_job(job)
-cs.destroy_managed_service(srv)
+cc.destroy_managed_service(srv)
