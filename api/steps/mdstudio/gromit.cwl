@@ -31,18 +31,20 @@ inputs:
     type: File
     inputBinding:
       position: 6
+  include_itp:
+    type: File
+    inputBinding:
+      position: 7  
   force_field:
     type: string
     default: gromos
     inputBinding:
-      position: 7
+      position: 8
   sim_time:
     type: double
     default: 0.0001
     inputBinding:
-      position: 8
-  include_itp:
-    type: File?
+      position: 9
 
 outputs:
   gromitout:
