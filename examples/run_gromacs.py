@@ -4,7 +4,7 @@ from time import sleep
 
 
 # Create a new service for user myuser, with given cluster credentials
-srv = cs.create_service(
+srv = cs.create_managed_service(
         'cerise-mdstudio-das5-myuser', 29593,
         'mdstudio/cerise-mdstudio-das5:develop',
         'username',
@@ -28,18 +28,18 @@ job.run()
 # Give the service a chance to stage things
 sleep(20)
 
-persisted_srv = srv.to_dict()   # store this somewhere, in a database
+persisted_srv = cs.service_to_dict(srv)   # store this somewhere, in a database
 persisted_job_id = job.id          # this as well
 
 # Stop the service
-srv.stop()
+cs.stop_managed_service(srv)
 
 # Here, you would quit Python, shut down the computer, etc.
 
 # To resume where we left off
 srv = cs.service_from_dict(persisted_srv)
-if not srv.is_running():
-    srv.start()
+if not cs.managed_service_is_running(srv):
+    cs.start_managed_service(srv)
 
 job = srv.get_job_by_id(persisted_job_id)
 
@@ -50,10 +50,11 @@ while job.is_running():
 # Process output
 if job.state == 'Success':
     job.outputs['trajectory'].save_as('CYP19A1vs_BHC89.trr')
+    job.outputs['energy'].save_as('CYP19A1vs_BHC89.edr')
 else:
     print('There was an error: ' + job.state)
     print(job.log)
 
 # Clean up the job and the service
-job.delete()
-srv.destroy()
+srv.destroy_job(job)
+cs.destroy_managed_service(srv)
