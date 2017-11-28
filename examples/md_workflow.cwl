@@ -27,9 +27,6 @@ outputs:
   energy:
     type: File
     outputSource: gromit/energy
-  mdp:
-    type: File
-    outputSource: gromit/mdp   
 
 steps:
   gromit:
@@ -44,4 +41,4 @@ steps:
       include_itp: include_itp
       force_field: force_field
       sim_time: sim_time
-    out: [gromitout,gromiterr,gromacslog_step9,trajectory, energy, mdp]
+    out: [gromitout,gromiterr,gromacslog_step9,trajectory, energy]
