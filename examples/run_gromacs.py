@@ -4,26 +4,17 @@ from time import sleep
 import cerise_client.service as cc
 
 
-def remove_previous(srv):
-    """Remove old jobs"""
-    jobs = srv.list_jobs()
-    if jobs:
-        for j in jobs:
-            print("removing: ", j.name)
-            srv.destroy_job(j)
-
-
 # Create a new service for user myuser, with given cluster credentials
 srv = cc.require_managed_service(
         'cerise-mdstudio-das5-myuser', 29593,
         'mdstudio/cerise-mdstudio-das5:develop',
         'user',
-        'passwd')
+        'password')
 cc.start_managed_service(srv)
+
 # Create a job and set workflow and inputs
-remove_previous(srv)
 print("Creating job")
-job = srv.create_job('example_job12')
+job = srv.create_job('example_job')
 job.set_workflow('md_workflow.cwl')
 job.add_input_file('protein_pdb', 'CYP19A1vs.pdb')
 job.add_input_file('protein_top', 'CYP19A1vs.top')
