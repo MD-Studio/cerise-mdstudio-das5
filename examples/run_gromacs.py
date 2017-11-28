@@ -17,9 +17,8 @@ def remove_previous(srv):
 srv = cc.require_managed_service(
         'cerise-mdstudio-das5-myuser', 29593,
         'mdstudio/cerise-mdstudio-das5:develop',
-        'fzapata',
-        'Quam#Hask86')
-
+        'user',
+        'passwd')
 cc.start_managed_service(srv)
 # Create a job and set workflow and inputs
 remove_previous(srv)
@@ -67,8 +66,7 @@ while job.is_running():
 # Process output
 if job.state == 'Success':
     job.outputs['trajectory'].save_as('CYP19A1vs_BHC89.trr')
-    job.outputs['energy'].save_as('energy.edr')
-    job.outputs['mdp'].save_as('md-prod.mdp')
+    job.outputs['energy'].save_as('energy.out')
 else:
     print('There was an error: ' + job.state)
     print(job.log)
