@@ -85,4 +85,4 @@ outputs:
     outputBinding: { glob: "*-MD.part0001.trr" }
   energy:
     type: File
-    outputBinding: { glob: "*-MD.part0001.edr" }
+    outputBinding: { glob: "energy.out" }
