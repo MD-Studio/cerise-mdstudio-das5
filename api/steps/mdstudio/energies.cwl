@@ -2,7 +2,7 @@ cwlVersion: v1.0
 
 class: CommandLineTool
 baseCommand: $CERISE_API_FILES/mdstudio/bin/getEnergies.py
-arguments: ["-ene"]
+arguments: ["energy"]
 stdout: getEnergy.out
 stderr: getEnergy.err
 

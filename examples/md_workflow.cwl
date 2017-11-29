@@ -10,6 +10,7 @@ inputs:
   include_itp: File
   force_field: string
   sim_time: double
+  workdir: Directory
 
 outputs:
   gromitout:
@@ -27,6 +28,9 @@ outputs:
   energy:
     type: File
     outputSource: gromit/energy
+  energy_dataframe:
+    type: File
+    outputSource: energies/energy_dataframe
 
 steps:
   gromit:
@@ -42,3 +46,9 @@ steps:
       force_field: force_field
       sim_time: sim_time
     out: [gromitout,gromiterr,gromacslog_step9,trajectory, energy]
+
+   energies:
+     run: mdstudio/energies.cwl
+     in:
+       workdir: ""
+     out: [energy_dataframe]
