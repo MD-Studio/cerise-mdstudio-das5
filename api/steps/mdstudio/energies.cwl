@@ -7,7 +7,7 @@ stdout: getEnergy.out
 stderr: getEnergy.err
 
 inputs:
-  d:
+  workdir:
     type: Directory
     inputBinding:
        prefix: -d
@@ -15,6 +15,6 @@ inputs:
 
 
 outputs:
-  energy:
+  energy_dataframe:
     type: File
     outputBinding: { glob: "energy.out" }
