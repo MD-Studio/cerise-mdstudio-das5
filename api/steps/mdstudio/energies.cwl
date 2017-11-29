@@ -7,12 +7,11 @@ stdout: getEnergy.out
 stderr: getEnergy.err
 
 inputs:
-  workdir:
-    type: Directory
+  edr:
+    type: File
     inputBinding:
-       prefix: -d
+       prefix: -edr
        position: 1
-
 
 outputs:
   energy_dataframe:
