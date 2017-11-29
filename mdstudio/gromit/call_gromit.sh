@@ -21,7 +21,7 @@ module load python/2.7.13
 
 GMXRC_FILE="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromacs/gromacs-2016.3/bin/GMXRC.bash"
 GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/gromit_mpi.sh"
-ENERGIES="$CERISE_API_FILES/mdstudio/getEnergies.py"
+ENERGIES="$CERISE_API_FILES/mdstudio/bin/getEnergies.py"
 
 . $GMXRC_FILE
 $GROMIT -gmxrc $GMXRC_FILE -vsite -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP -ff $FORCE_FIELD -time $SIM_TIME
