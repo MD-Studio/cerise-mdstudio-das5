@@ -1,13 +1,19 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: ls
-arguments: ["."] 
-stdout: ls.out
-stderr: ls.err
+baseCommand: $CERISE_API_FILES/mdstudio/bin/getEnergies.py
+arguments: ["energy"]
+stdout: getEnergy.out
+stderr: getEnergy.err
 
-inputs: []
+inputs:
+  edr:
+    type: File
+    inputBinding:
+       prefix: -edr
+       position: 1
+
 outputs:
-   output:
-    type: stdout
-    output:
+  energy_dataframe:
+    type: File
+    outputBinding: { glob: "energy.out" }
