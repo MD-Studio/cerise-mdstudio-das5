@@ -15,3 +15,4 @@ fi
 
 SCRIPT="https://raw.githubusercontent.com/MD-Studio/MDStudio/prototype/components/lie_md/lie_md/scripts/getEnergies.py"
 wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/bin"
+pip install panedr --user

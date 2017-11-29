@@ -26,5 +26,4 @@ ENERGIES="$CERISE_API_FILES/mdstudio/getEnergies.py"
 . $GMXRC_FILE
 $GROMIT -gmxrc $GMXRC_FILE -vsite -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP -ff $FORCE_FIELD -time $SIM_TIME
 
-# pip install panedr --user
-# python $ENERGIES -ene
+python $ENERGIES -ene
