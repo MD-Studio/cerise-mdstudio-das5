@@ -25,5 +25,3 @@ ENERGIES="$CERISE_API_FILES/mdstudio/bin/getEnergies.py"
 
 . $GMXRC_FILE
 $GROMIT -gmxrc $GMXRC_FILE -vsite -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP -ff $FORCE_FIELD -time $SIM_TIME
-
-python $ENERGIES -ene
