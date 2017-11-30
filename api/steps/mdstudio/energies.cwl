@@ -1,7 +1,8 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: $CERISE_API_FILES/mdstudio/bin/getEnergies.py
+# baseCommand: $CERISE_API_FILES/mdstudio/bin/getEnergies.py 
+baseCommand: getEnergies.py
 arguments: ["energy"]
 stdout: getEnergy.out
 stderr: getEnergy.err
@@ -22,5 +23,5 @@ outputs:
     outputBinding: { glob: getEnergy.out }
   energyerr:
     type: File
-    outputBinding: { glob: getEnergy.out }
+    outputBinding: { glob: getEnergy.err }
     
