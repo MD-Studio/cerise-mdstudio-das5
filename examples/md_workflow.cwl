@@ -27,7 +27,18 @@ outputs:
   energy:
     type: File
     outputSource: gromit/energy
+  energy_dataframe:
+    type: File
+    outputSource: energy/energy_dataframe
+  energyout:
+    type: File
+    outputSource: energy/energyout
+  energyerr:
+    type: File
+    outputSource: energy/energyerr
 
+    
+    
 steps:
   gromit:
     run: mdstudio/gromit.cwl
@@ -42,10 +53,9 @@ steps:
       force_field: force_field
       sim_time: sim_time
     out: [gromitout,gromiterr,gromacslog_step9,trajectory, energy]
-
   energy:
     run: mdstudio/energies.cwl
     in:
       edr:
-         source: gromit/energy
-    out: [energy_dataframe]
+        source: gromit/energy
+    out: [energy_dataframe, energyout, energyerr]
