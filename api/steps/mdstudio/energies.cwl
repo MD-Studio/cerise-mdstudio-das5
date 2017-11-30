@@ -17,3 +17,10 @@ outputs:
   energy_dataframe:
     type: File
     outputBinding: { glob: "energy.out" }
+  energyout:
+    type: File
+    outputBinding: { glob: getEnergy.out }
+  energyerr:
+    type: File
+    outputBinding: { glob: getEnergy.out }
+    
