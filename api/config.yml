@@ -2,7 +2,7 @@ compute-resource:
   files:
     scheme: sftp
     location: fs0.das5.cs.vu.nl
-    path: /home/$CERISE_USERNAME/.cerise
+    path: /home$CERISE_USERNAME/.cerise
 
   jobs:
     scheme: slurm
