@@ -1,4 +1,4 @@
-  compute-resource:
+compute-resource:
   files:
     scheme: sftp
     location: fs0.das5.cs.vu.nl
