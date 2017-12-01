@@ -7,6 +7,5 @@
   jobs:
     scheme: slurm
     location: fs0.das5.cs.vu.nl
-    # cwl-runner: $CERISE_API_FILES/cerise/cwltiny.py
-    cwl-runner: /home/$CERISE_USERNAME/.local/bin/cwltool
+    cwl-runner: $CERISE_API_FILES/cerise/cwltiny.py
     slots-per-node: 4
