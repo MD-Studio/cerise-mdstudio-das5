@@ -15,36 +15,24 @@ inputs:
     type: File
     inputBinding:
        position: 2
-  protein_itp:
-    type: File
-    inputBinding:
-      position: 3
   ligand_pdb:
     type: File
     inputBinding:
-      position: 4
+      position: 3
   ligand_top:
     type: File
     inputBinding:
-      position: 5
-  ligand_itp:
-    type: File
-    inputBinding:
-      position: 6
-  include_itp:
-    type: File
-    inputBinding:
-      position: 7  
+      position: 4
   force_field:
     type: string
     default: gromos
     inputBinding:
-      position: 8
+      position: 5
   sim_time:
     type: double
     default: 0.0001
     inputBinding:
-      position: 9
+      position: 6
 
 outputs:
   gromitout:
