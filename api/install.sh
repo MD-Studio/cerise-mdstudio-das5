@@ -22,4 +22,4 @@ fi
 
 # Install Python dependencies locally
 module load $PYTHON_MODULE
-pip install panedr cwltool --user
+pip install panedr --install-option="--prefix=$CERISE_API_FILES/python"
