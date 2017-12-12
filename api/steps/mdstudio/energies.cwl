@@ -1,8 +1,8 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: $CERISE_API_FILES/mdstudio/bin/getEnergies.py 
-arguments: ["energy"]
+baseCommand: $CERISE_API_FILES/mdstudio/energies/call_getenergies.sh
+arguments: ["$CERISE_API_FILES"]
 stdout: getEnergy.out
 stderr: getEnergy.err
 
@@ -10,7 +10,6 @@ inputs:
   edr:
     type: File
     inputBinding:
-       prefix: -edr
        position: 1
 
 outputs:

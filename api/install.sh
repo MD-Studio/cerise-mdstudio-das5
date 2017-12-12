@@ -1,7 +1,6 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
-PYTHON_MODULE='python/2.7.13'
 
 if [ -d "$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5" ] ; then
     cd "$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5"
@@ -14,12 +13,15 @@ else
     git checkout develop
 fi
 
-if [ ! -f "$CERISE_API_FILES/mdstudio/bin/getEnergies.py" ] ; then
+if [ ! -f "$CERISE_API_FILES/mdstudio/energies/getEnergies.py" ] ; then
     SCRIPT="https://raw.githubusercontent.com/MD-Studio/MDStudio/prototype/components/lie_md/lie_md/scripts/getEnergies.py"
-    wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/bin"
-    chmod u+x "$CERISE_API_FILES/mdstudio/bin/getEnergies.py"
+    wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/energies"
 fi
 
-# Install Python dependencies locally
-module load $PYTHON_MODULE
-pip install panedr --user
+if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
+    wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh
+    bash miniconda.sh -b -p $CERISE_API_FILES/miniconda
+    conda config --set always_yes yes --set changeps1 no --set auto_update_conda False
+    source $CERISE_API_FILES/miniconda/bin/acitvate root
+    pip install panedr
+fi
