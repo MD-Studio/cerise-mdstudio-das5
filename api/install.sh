@@ -22,6 +22,4 @@ fi
 
 # Install Python dependencies locally
 module load $PYTHON_MODULE
-pip install panedr --install-option="--prefix=$CERISE_API_FILES/python"
-
-export PYTHONPATH="$PYTHONPATH:$CERISE_API_FILES/python/lib/python2.7/site-packages"
+pip install panedr --user
