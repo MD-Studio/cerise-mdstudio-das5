@@ -15,7 +15,7 @@ fi
 
 if [ ! -f "$CERISE_API_FILES/mdstudio/energies/getEnergies.py" ] ; then
     SCRIPT="https://raw.githubusercontent.com/MD-Studio/MDStudio/prototype/components/lie_md/lie_md/scripts/getEnergies.py"
-    wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/energies"
+    wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/bin"
 fi
 
 if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
