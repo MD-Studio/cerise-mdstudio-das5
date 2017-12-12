@@ -13,13 +13,7 @@ else
     git checkout develop
 fi
 
-if [ ! -f "$CERISE_API_FILES/mdstudio/bin/getEnergies.py" ] ; then
-    SCRIPT="https://raw.githubusercontent.com/MD-Studio/MDStudio/prototype/components/lie_md/lie_md/scripts/getEnergies.py"
-    wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/energies"
-fi
-
-
-if [! -d "$CERISE_API_FILES/miniconda"] ; then
+if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
     wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh
     bash miniconda.sh -b -p $CERISE_API_FILES/miniconda
     conda config --set always_yes yes --set changeps1 no --set auto_update_conda False
