@@ -23,6 +23,7 @@ if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
     bash miniconda.sh -b -p $CERISE_API_FILES/miniconda
     conda config --set always_yes yes --set changeps1 no --set auto_update_conda False
     source $CERISE_API_FILES/miniconda/bin/acitvate root
-    conda install numpy pandas
+    conda clean --index-cache
+    conda install --name root numpy pandas
     pip install panedr
 fi
