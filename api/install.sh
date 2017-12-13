@@ -22,7 +22,7 @@ if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
     wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh
     bash miniconda.sh -b -p $CERISE_API_FILES/miniconda
     conda config --set always_yes yes --set changeps1 no --set auto_update_conda False
-    source $CERISE_API_FILES/miniconda/bin/acitvate root
+    source $CERISE_API_FILES/miniconda/bin/activate root
     conda clean --index-cache
     pip install panedr
 fi
