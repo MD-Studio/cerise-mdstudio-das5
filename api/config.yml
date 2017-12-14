@@ -1,11 +1,13 @@
 compute-resource:
+  refresh: 10
   files:
-    scheme: sftp
+    protocol: sftp
     location: fs0.das5.cs.vu.nl
     path: /home/$CERISE_USERNAME/.cerise
 
   jobs:
-    scheme: slurm
+    protocol: ssh
     location: fs0.das5.cs.vu.nl
+    scheduler: slurm
     cwl-runner: $CERISE_API_FILES/cerise/cwltiny.py
     slots-per-node: 4
