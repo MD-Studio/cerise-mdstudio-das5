@@ -11,6 +11,26 @@ inputs:
     type: string
     inputBinding:
        position: 1
+  gro:
+    type: File
+    inputBinding:
+       position: 2
+  ndx:
+    type: File
+    inputBinding:
+       position: 3
+  trr:
+    type: File
+    inputBinding:
+       position: 4
+  top:
+    type: File
+    inputBinding:
+       position: 5
+  mdp:
+    type: File
+    inputBinding:
+       position: 6
 
 outputs:
   energy:
