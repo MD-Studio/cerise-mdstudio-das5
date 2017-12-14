@@ -33,8 +33,12 @@ inputs:
        position: 6
 
 outputs:
-  energy:
+  decompose_dataframe:
     type: File
     outputBinding: { glob: "decompose.ene" }
-
-    
+  decompose_err:
+    type: File
+    outputBinding: { glob: "decompose.err" }
+  decompose_out:
+    type: File
+    outputBinding: { glob: "decompose.out" }
