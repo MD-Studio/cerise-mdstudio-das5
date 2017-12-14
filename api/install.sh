@@ -8,9 +8,7 @@ if [ -d "$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5" ] ; then
 else
     mkdir -p "$CERISE_API_FILES/mdstudio/github"
     cd "$CERISE_API_FILES/mdstudio/github"
-    git clone https://github.com/MD-Studio/cerise-mdstudio-das5.git
-    cd "$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5"
-    git checkout develop
+    git clone -b lie https://github.com/MD-Studio/cerise-mdstudio-das5.git
 fi
 
 if [ ! -f "$CERISE_API_FILES/mdstudio/energies/getEnergies.py" ] ; then

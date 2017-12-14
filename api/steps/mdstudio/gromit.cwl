@@ -74,3 +74,15 @@ outputs:
   energy:
     type: File
     outputBinding: { glob: "*-MD.part*.edr" }
+  gro:
+    type: File
+    outputBinding: { glob: "*-sol.gro" }
+  ndx:
+    type: File
+    outputBinding: { glob: "*-sol.ndx" }
+  top:
+    type: File
+    outputBinding: { glob: "*-sol.top" }
+  mdp:
+    type: File
+    outputBinding: { glob: md-prod-out.mdp}
