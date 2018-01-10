@@ -2489,9 +2489,8 @@ then
     ## 1. Solvation
 
     # a. Basic stuff
-    SolFile=${SolFile:-$SolModel}
     [[ $GMXVERSION -gt 4 ]] && SOLVATE="$GMXBIN/gmx solvate" || SOLVATE=$GMXBIN/genbox
-    SOLVATE="$SOLVATE -cp $GRO -cs $SolFile -o $base-sol-b4ions.gro"
+    SOLVATE="$SOLVATE -cp $GRO -cs -o $base-sol-b4ions.gro"
 
     # b. Add program specific options from command line
     SOLVATE="$SOLVATE $(program_options genbox)"
