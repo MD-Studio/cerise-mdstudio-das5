@@ -25,32 +25,26 @@ inputs:
       position: 4
   electrostatics:
     type: string
-    default: "PME"
     inputBinding:
       position: 5      
   forcefield:
     type: string
     inputBinding:
-      default: "amber99sb"
       position: 6      
   periodic_distance:
     type: double
-    default: 1.8
     inputBinding:
       position: 7
   pressure:
     type: double
-    default: 1.01325
     inputBinding:
       position: 8     
   prfc:
     type: string
-    default: "10000,5000,50,0"
     inputBinding:
       position: 9
   ptau:
     type: double
-    default: 0.5
     inputBinding:
       position: 10
   residues:
@@ -59,32 +53,26 @@ inputs:
       position: 11
   resolution:
     type: double
-    default: 0.002
     inputBinding:
       position: 12
   salinity:
     type: double
-    default: 0.1539976
     inputBinding:
       position: 13
   sim_time:
     type: double
-    default: 1
     inputBinding:
       position: 14  
   solvent:
     type: string
-    default: "tip3p"
     inputBinding:
       position: 15
   temperature:
     type: string
-    default: "100,200,300"
     inputBinding:
       position: 16  
   ttau:
     type: double
-    default: "100,200,300"
     inputBinding:
       position: 17  
 
