@@ -23,16 +23,58 @@ inputs:
     type: File
     inputBinding:
       position: 4
-  force_field:
+  electrostatics:
     type: string
-    default: gromos
     inputBinding:
-      position: 5
+      position: 5      
+  forcefield:
+    type: string
+    inputBinding:
+      position: 6      
+  periodic_distance:
+    type: double
+    inputBinding:
+      position: 7
+  pressure:
+    type: double
+    inputBinding:
+      position: 8     
+  prfc:
+    type: string
+    inputBinding:
+      position: 9
+  pta:
+    type: double
+    inputBinding:
+      position: 10
+  residues:
+    type: string
+    inputBinding:
+      position: 11
+  resolution:
+    type: double
+    inputBinding:
+      position: 12
+  salinity:
+    type: double
+    inputBinding:
+      position: 13
   sim_time:
     type: double
-    default: 0.0001
     inputBinding:
-      position: 6
+      position: 14  
+  solvent:
+    type: string
+    inputBinding:
+      position: 15
+  temperature:
+    type: string
+    inputBinding:
+      position: 16  
+  tta:
+    type: double
+    inputBinding:
+      position: 17  
 
 outputs:
   gromitout:
