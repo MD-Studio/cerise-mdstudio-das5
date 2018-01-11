@@ -23,58 +23,50 @@ inputs:
     type: File
     inputBinding:
       position: 4
-  electrostatics:
-    type: string
-    inputBinding:
-      position: 5      
   forcefield:
     type: string
     inputBinding:
-      position: 6      
+      position: 5
   periodic_distance:
     type: double
     inputBinding:
-      position: 7
+      position: 6
   pressure:
     type: double
     inputBinding:
-      position: 8     
+      position: 7     
   prfc:
     type: string
     inputBinding:
-      position: 9
+      position: 8
   ptau:
     type: double
     inputBinding:
-      position: 10
-  residues:
-    type: string
-    inputBinding:
-      position: 11
+      position: 9
   resolution:
     type: double
     inputBinding:
-      position: 12
+      position: 10
   salinity:
     type: double
     inputBinding:
-      position: 13
+      position: 11
   sim_time:
     type: double
     inputBinding:
-      position: 14  
+      position: 12  
   solvent:
     type: string
     inputBinding:
-      position: 15
+      position: 13
   temperature:
     type: string
     inputBinding:
-      position: 16  
+      position: 14  
   ttau:
     type: double
     inputBinding:
-      position: 17  
+      position: 15  
 
 outputs:
   gromitout:

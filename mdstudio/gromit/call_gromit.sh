@@ -5,18 +5,17 @@ PROTEIN_PDB="$2"
 PROTEIN_TOP="$3"
 LIGAND_PDB="$4"
 LIGAND_TOP="$5"
-ELECTROSTATICS="$6"
-FORCEFIELD="$7"
-PERIODIC_DISTANCE="$8"
-PRESSURE="$9"
-PRFC="${10}"
-PTAU="${11}"
-RESOLUTION="${12}"
-SALINITY="${13}"
-SIM_TIME="${14}"
-SOLVENT="${15}"
-TEMPERATURE="${16}"
-TTAU="${17}"
+FORCEFIELD="$6"
+PERIODIC_DISTANCE="$7"
+PRESSURE="$8"
+PRFC="$9"
+PTAU="${10}"
+RESOLUTION="${11}"
+SALINITY="${12}"
+SIM_TIME="${13}"
+SOLVENT="${14}"
+TEMPERATURE="${15}"
+TTAU="${16}"
 
 
 # Function to evalute if a string is true or false
@@ -34,6 +33,6 @@ GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/g
 
 . $GMXRC_FILE
 $GROMIT -gmxrc $GMXRC_FILE -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP \
-	-elec $ELECTROSTATICS -ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC \
-	-ptau $PTAU -at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
+	-ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC -ptau $PTAU \
+	-at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
 	-t $TEMPERATURE -ttau $TTAU  -vsite -lie
