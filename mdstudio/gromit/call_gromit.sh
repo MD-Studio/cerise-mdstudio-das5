@@ -34,6 +34,6 @@ GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/g
 
 . $GMXRC_FILE
 $GROMIT -gmxrc $GMXRC_FILE -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP \
-	-elec $ELECTROSTATICS -ff $FORCE_FIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC \
+	-elec $ELECTROSTATICS -ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC \
 	-ptau $PTAU -at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
 	-t $TEMPERATURE -ttau $TTAU  -vsite -lie
