@@ -67,7 +67,10 @@ inputs:
     type: double
     inputBinding:
       position: 15  
-
+  solvate_ligand:
+    type: bool
+    inputBinding:
+      position: 16
 outputs:
   gromitout:
     type: File
