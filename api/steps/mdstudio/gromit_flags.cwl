@@ -20,7 +20,7 @@ inputs:
   ligand_pdb_top:
     type:
       type: array
-      itmes: File
+      items: File
     inputBinding:
       prefix: -l
       itemSeparator: ","
