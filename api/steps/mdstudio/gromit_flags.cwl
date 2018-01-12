@@ -13,8 +13,7 @@ inputs:
     inputBinding:
       position: 1
   ligand_top:
-    type:
-      type: File
+    type: File
     inputBinding:
       position: 2
   protein_pdb:
