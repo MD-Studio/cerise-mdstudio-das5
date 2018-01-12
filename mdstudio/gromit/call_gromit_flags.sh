@@ -20,4 +20,4 @@ GMXRC_FILE="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/grom
 GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/gromit_mpi.sh"
 
 # perform a normal MD protein-ligand simulation
-$GROMIT -gmxrc $GMXRC_FILE -np 8 -vsite -lie $ARGS
+$GROMIT -gmxrc $GMXRC_FILE -np 8 -vsite -lie $*
