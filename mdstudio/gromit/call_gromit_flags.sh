@@ -1,7 +1,9 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
-ARGS=$*
+
+# Remove the CERISE_API_FILES item from the input array
+shift
 
 # Function to evalute if a string is true or false
 module load fftw3/openmpi/gcc/64/3.3.4
