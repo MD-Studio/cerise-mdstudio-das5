@@ -8,8 +8,7 @@ stderr: gromit.err
 
 inputs:
   ligand_pdb:
-    type:
-      type: File
+    type: File
     inputBinding:
       position: 1
   ligand_top:
