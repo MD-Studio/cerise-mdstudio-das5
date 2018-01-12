@@ -66,11 +66,7 @@ inputs:
   ttau:
     type: double
     inputBinding:
-      position: 15  
-  solvate_ligand:
-    type: bool
-    inputBinding:
-      position: 16
+      position: 15
 outputs:
   gromitout:
     type: File

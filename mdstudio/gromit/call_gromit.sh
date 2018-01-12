@@ -16,7 +16,6 @@ SIM_TIME="${13}"
 SOLVENT="${14}"
 TEMPERATURE="${15}"
 TTAU="${16}"
-SOLVATE_LIGAND="{$17}"
 
 # Function to evalute if a string is true or false
 module load fftw3/openmpi/gcc/64/3.3.4
@@ -32,16 +31,7 @@ GMXRC_FILE="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/grom
 . $GMXRC_FILE
 GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/gromit_mpi.sh"
 
-if [[ -z ${SOLVATE_LIGAND} ]]; then
-# perform a normal MD protein-ligand simulation
-    $GROMIT -gmxrc $GMXRC_FILE -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP \
-	    -ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC -ptau $PTAU \
-	    -at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
-	    -t $TEMPERATURE -ttau $TTAU  -vsite -lie
-# Perform a ligand solvation 
-else
-    $GROMIT -gmxrc $GMXRC_FILE -np 8 -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP \
-	    -ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC -ptau $PTAU \
-	    -at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
-	    -t $TEMPERATURE -ttau $TTAU  -vsite -lie
-fi    
+$GROMIT -gmxrc $GMXRC_FILE -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP \
+	-ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC -ptau $PTAU \
+	-at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
+	-t $TEMPERATURE -ttau $TTAU  -vsite -lie
