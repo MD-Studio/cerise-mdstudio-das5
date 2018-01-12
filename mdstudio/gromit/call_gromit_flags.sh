@@ -1,9 +1,11 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
+LIGAND_PDB="$2"
+LIGAND_TOP="$3"
 
 # Remove the CERISE_API_FILES item from the input array
-shift
+shift 3
 
 # Function to evalute if a string is true or false
 module load fftw3/openmpi/gcc/64/3.3.4
@@ -20,4 +22,4 @@ GMXRC_FILE="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/grom
 GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/gromit_mpi.sh"
 
 # perform a normal MD protein-ligand simulation
-$GROMIT -gmxrc $GMXRC_FILE -np 8 -vsite -lie $*
+$GROMIT -gmxrc $GMXRC_FILE -np 8 -vsite -lie -l $LIGAND_PDB,$LIGAND_TOP $*
