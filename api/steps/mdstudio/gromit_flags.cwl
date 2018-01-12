@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   protein_pdb:
-    type: File
+    type: File?
     inputBinding:
        position: 3
        prefix: -f
