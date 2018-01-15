@@ -4,7 +4,8 @@ CERISE_API_FILES="$1"
 LIGAND_PDB="$2"
 LIGAND_TOP="$3"
 
-# Remove the CERISE_API_FILES item from the input array
+# Remove the CERISE_API_FILES, lIGAND_PDB and LIGAND_TOP
+# items from the input array
 shift 3
 
 # Function to evalute if a string is true or false
