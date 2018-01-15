@@ -41,7 +41,7 @@ inputs:
       position: 7
       prefix: -p
   prfc:
-    type: string
+    type: int[]
     inputBinding:
       position: 8
       prefix: -prfc
@@ -71,9 +71,7 @@ inputs:
       position: 13
       prefix: -solvent
   temperature:
-    type:
-      type: array
-      items: int
+    type: int[]
     inputBinding:
       position: 14
       itemSeparator: ","
