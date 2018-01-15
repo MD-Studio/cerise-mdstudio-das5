@@ -45,6 +45,7 @@ inputs:
     inputBinding:
       position: 8
       prefix: -prfc
+      itemSeparator: ","
   ptau:
     type: double
     inputBinding:
