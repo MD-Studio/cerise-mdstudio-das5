@@ -76,7 +76,9 @@ inputs:
       items: int
     inputBinding:
       position: 14
+      itemSeparator: ","
       prefix: -t
+
   ttau:
     type: double
     inputBinding:
