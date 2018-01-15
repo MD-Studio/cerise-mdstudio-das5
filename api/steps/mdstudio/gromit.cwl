@@ -71,7 +71,9 @@ inputs:
       position: 13
       prefix: -solvent
   temperature:
-    type: string
+    type:
+      type: array
+      items: int
     inputBinding:
       position: 14
       prefix: -t
