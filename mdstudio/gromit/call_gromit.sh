@@ -1,21 +1,12 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
-PROTEIN_PDB="$2"
-PROTEIN_TOP="$3"
-LIGAND_PDB="$4"
-LIGAND_TOP="$5"
-FORCEFIELD="$6"
-PERIODIC_DISTANCE="$7"
-PRESSURE="$8"
-PRFC="$9"
-PTAU="${10}"
-RESOLUTION="${11}"
-SALINITY="${12}"
-SIM_TIME="${13}"
-SOLVENT="${14}"
-TEMPERATURE="${15}"
-TTAU="${16}"
+LIGAND_PDB="$2"
+LIGAND_TOP="$3"
+
+# Remove the CERISE_API_FILES, lIGAND_PDB and LIGAND_TOP
+# items from the input array
+shift 3
 
 # Function to evalute if a string is true or false
 module load fftw3/openmpi/gcc/64/3.3.4
@@ -31,7 +22,5 @@ GMXRC_FILE="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/grom
 . $GMXRC_FILE
 GROMIT="$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5/mdstudio/gromit/gromit_mpi.sh"
 
-$GROMIT -gmxrc $GMXRC_FILE -np 8 -f $PROTEIN_PDB -top $PROTEIN_TOP -l $LIGAND_PDB,$LIGAND_TOP \
-	-ff $FORCEFIELD -d $PERIODIC_DISTANCE -p $PRESSURE -prfc $PRFC -ptau $PTAU \
-	-at $RESOLUTION -conc $SALINITY -time $SIM_TIME -solvent $SOLVENT \
-	-t $TEMPERATURE -ttau $TTAU  -vsite -lie
+# perform a normal MD protein-ligand simulation
+$GROMIT -gmxrc $GMXRC_FILE -np 8 -vsite -lie -l $LIGAND_PDB,$LIGAND_TOP $*
