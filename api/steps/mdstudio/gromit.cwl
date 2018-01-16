@@ -77,7 +77,6 @@ inputs:
       position: 14
       itemSeparator: ","
       prefix: -t
-
   ttau:
     type: double
     inputBinding:

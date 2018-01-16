@@ -10,7 +10,8 @@ inputs:
   edr:
     type: File
     inputBinding:
-       position: 1
+      position: 1
+      prefix: -edr
 
 outputs:
   energy_dataframe:
