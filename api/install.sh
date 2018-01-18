@@ -1,15 +1,15 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
-CERISE_SPECIALIZATION=cerise-mdstudio-das5
+CERISE_DATA=cerise-mdstudio-share-data
 
-if [ -d "$CERISE_API_FILES/mdstudio/github/$CERISE_SPECIALIZATION" ] ; then
-    cd "$CERISE_API_FILES/mdstudio/github/$CERISE_SPECIALIZATION"
+if [ -d "$CERISE_API_FILES/mdstudio/github/$CERISE_DATA" ] ; then
+    cd "$CERISE_API_FILES/mdstudio/github/$CERISE_DATA"
     git pull
 else
     mkdir -p "$CERISE_API_FILES/mdstudio/github"
     cd "$CERISE_API_FILES/mdstudio/github"
-    git clone -b develop https://github.com/MD-Studio/$CERISE_SPECIALIZATION.git
+    git clone https://github.com/MD-Studio/$CERISE_DATA.git
 fi
 
 if [ ! -f "$CERISE_API_FILES/mdstudio/energies/getEnergies.py" ] ; then
