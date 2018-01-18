@@ -12,6 +12,10 @@ else
     git clone https://github.com/MD-Studio/$CERISE_DATA.git
 fi
 
+# Link steps files with cerise api folder
+ ln -s $CERISE_API_FILES/mdstudio/github/$CERISE_DATA/api/steps $HOME/.cerise/api
+
+
 if [ ! -f "$CERISE_API_FILES/mdstudio/energies/getEnergies.py" ] ; then
     SCRIPT="https://raw.githubusercontent.com/MD-Studio/MDStudio/master/components/lie_md/lie_md/scripts/getEnergies.py"
     wget $SCRIPT -P "$CERISE_API_FILES/mdstudio/bin"
