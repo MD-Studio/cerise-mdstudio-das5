@@ -25,3 +25,15 @@ if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
     conda clean --index-cache
     pip install panedr
 fi
+
+# Define PATH to gromacs in DAS
+GMXRC_MDSTUDIO=$CERISE_API_FILES/mdstudio/github/$CERISE_DATA/mdstudio/gromacs/gromacs-2016.3/bin/GMXRC.bash
+
+# ADD ENV variable if it is not already there
+pred=$(grep -m 1 'GMXRC_MDSTUDIO' ~/.bashrc)
+if [[ -z pred ]]; then
+    echo >>~/.bashrc
+    echo '# Added by cerise-mdstudio, sorry!' >>~/.bashrc
+    echo 'export GMXRC_MDSTUDIO=$GMXRC_MDSTUDIO' >>~/.bashrc
+    echo '# End cerise-mdstudio additions' >>~/.bashrc    
+fi
