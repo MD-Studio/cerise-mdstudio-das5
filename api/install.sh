@@ -31,7 +31,7 @@ GMXRC_MDSTUDIO=$CERISE_API_FILES/mdstudio/github/$CERISE_DATA/mdstudio/gromacs/g
 
 # ADD ENV variable if it is not already there
 pred=$(grep -m 1 'GMXRC_MDSTUDIO' ~/.bashrc)
-if [[ -z pred ]]; then
+if [[ -z $pred ]]; then
     echo >>~/.bashrc
     echo '# Added by cerise-mdstudio, sorry!' >>~/.bashrc
     echo 'export GMXRC_MDSTUDIO=$GMXRC_MDSTUDIO' >>~/.bashrc
