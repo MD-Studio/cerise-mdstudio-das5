@@ -1,14 +1,15 @@
 #!/bin/bash
 
 CERISE_API_FILES="$1"
+CERISE_DATA=cerise-mdstudio-share-data
 
-if [ -d "$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5" ] ; then
-    cd "$CERISE_API_FILES/mdstudio/github/cerise-mdstudio-das5"
+if [ -d "$CERISE_API_FILES/mdstudio/github/$CERISE_DATA" ] ; then
+    cd "$CERISE_API_FILES/mdstudio/github/$CERISE_DATA"
     git pull
 else
     mkdir -p "$CERISE_API_FILES/mdstudio/github"
     cd "$CERISE_API_FILES/mdstudio/github"
-    git clone -b develop https://github.com/MD-Studio/cerise-mdstudio-das5.git
+    git clone https://github.com/MD-Studio/$CERISE_DATA.git
 fi
 
 if [ ! -f "$CERISE_API_FILES/mdstudio/energies/getEnergies.py" ] ; then
@@ -23,4 +24,16 @@ if [ ! -d "$CERISE_API_FILES/miniconda" ] ; then
     source $CERISE_API_FILES/miniconda/bin/activate root
     conda clean --index-cache
     pip install panedr
+fi
+
+# Define PATH to gromacs in DAS
+GMXRC_MDSTUDIO=$CERISE_API_FILES/mdstudio/github/$CERISE_DATA/mdstudio/gromacs/gromacs-2016.3/bin/GMXRC.bash
+
+# ADD ENV variable if it is not already there
+pred=$(grep -m 1 'GMXRC_MDSTUDIO' ~/.bashrc)
+if [[ -z $pred ]]; then
+    echo >>~/.bashrc
+    echo '# Added by cerise-mdstudio, sorry!' >>~/.bashrc
+    echo 'export GMXRC_MDSTUDIO=$GMXRC_MDSTUDIO' >>~/.bashrc
+    echo '# End cerise-mdstudio additions' >>~/.bashrc    
 fi
