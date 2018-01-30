@@ -19,12 +19,12 @@ GROMACS_PATH="$CERISE_API_FILES/mdstudio/gromacs/gromacs-2016.4"
 if [ ! -d $GROMACS_PATH ]; then
     cd $CERISE_API_FILES/mdstudio
     git clone git://github.com/MD-Studio/cerise-mdstudio-das5.git
-    mv cerise-mdstudio-das5/gromacs .
-    rm -rf cerise-mdstudio-das5
+    # mv cerise-mdstudio-das5/gromacs .
+    # rm -rf cerise-mdstudio-das5
 fi
 
 # Define PATH to gromacs in DAS
-GMXRC_MDSTUDIO=$CERISE_API_FILES/mdstudio/gromacs/gromacs-2016.4/scripts/GMXRC.bash
+GMXRC_MDSTUDIO="$GROMACS_PATH/scripts/GMXRC.bash"
 
 # ADD ENV variable if it is not already there
 pred=$(grep -m 1 'GMXRC_MDSTUDIO' ~/.bashrc)
