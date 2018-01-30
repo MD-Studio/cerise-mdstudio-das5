@@ -52,7 +52,7 @@ MANPATH=$tmppath
 ##########################################################
 GMXPREFIX=$HOME/.cerise/api/files/mdstudio/gromacs/gromacs-2016.4
 GMXBIN=${GMXPREFIX}/bin
-GMXLDLIB=${GMXPREFIX}/lib64
+GMXLDLIB=${GMXPREFIX}/lib
 GMXMAN=${GMXPREFIX}/share/man
 GMXDATA=${GMXPREFIX}/share/gromacs
 GROMACS_DIR=${GMXPREFIX}
