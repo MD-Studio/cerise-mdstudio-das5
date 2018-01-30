@@ -17,6 +17,7 @@ $INSTALL_SCRIPT $CERISE_API_FILES
 # GROMACS binaries for DAS5
 GROMACS_PATH="$CERISE_API_FILES/mdstudio/gromacs/gromacs-2016.4"
 if [ ! -d $GROMACS_PATH ]; then
+    cd $CERISE_API_FILES/mdstudio
     git clone git://github.com/MD-Studio/cerise-mdstudio-das5.git
     mv cerise-mdstudio-das5/gromacs .
     rm -rf cerise-mdstudio-das5
