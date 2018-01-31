@@ -1,0 +1,11 @@
+libdir=/home/fzapata/gromacs/lib64
+
+Name: libgromacs_mpi
+Description: Gromacs library
+URL: http://www.gromacs.org
+Version: 2016.4
+Requires:  
+Libs.private: -lpthread -ldl -fopenmp
+Libs: -L${libdir} -lgromacs_mpi  -lm 
+Cflags:  -I/home/fzapata/gromacs/include -DGMX_DOUBLE=0 -fopenmp -std=c++0x 
+
