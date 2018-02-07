@@ -50,7 +50,8 @@ MANPATH=$tmppath
 # things in separate vars, so we can remove them later.
 # If you move gromacs, change the first line.
 ##########################################################
-GMXPREFIX=$HOME/.cerise/api/files/mdstudio/gromacs
+user=$(whoami)
+GMXPREFIX=/home/$user/.cerise/api/files/mdstudio/gromacs
 GMXBIN=${GMXPREFIX}/bin
 GMXLDLIB=${GMXPREFIX}/lib64
 GMXMAN=${GMXPREFIX}/share/man
