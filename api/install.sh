@@ -22,16 +22,3 @@ if [ ! -d $GROMACS_PATH ]; then
     mv cerise-mdstudio-das5/gromacs .
     rm -rf cerise-mdstudio-das5
 fi
-
-# Define PATH to gromacs in DAS
-GMXRC_MDSTUDIO="$GROMACS_PATH/bin/GMXRC.bash"
-
-# ADD ENV variable if it is not already there
-pred=$(grep -m 1 'GMXRC_MDSTUDIO' ~/.bashrc)
-if [[ -z $pred ]]; then
-    echo >>~/.bashrc
-    echo "# Added by cerise-mdstudio, sorry!" >>~/.bashrc
-    echo "module load openmpi/gcc/64/1.8.1 cuda90/toolkit/9.0.176" >>~/.bashrc
-    echo "export GMXRC_MDSTUDIO=$GMXRC_MDSTUDIO" >>~/.bashrc
-    echo "# End cerise-mdstudio additions" >>~/.bashrc    
-fi
