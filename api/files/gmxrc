@@ -1,0 +1,7 @@
+
+# Load modules
+. /etc/profile.d/modules.sh
+module load gcc/6.3.0 openmpi/gcc/64/1.8.1 cuda90/toolkit/9.0.176
+
+# Environmental variable
+GMXRC_MDSTUDIO=$CERISE_API_FILES/mdstudio/gromacs/bin/GMXRC.bash

@@ -9,5 +9,5 @@ compute-resource:
     protocol: ssh
     location: fs0.das5.cs.vu.nl
     scheduler: slurm
-    cwl-runner: $CERISE_API_FILES/cerise/cwltiny.py
+    cwl-runner: $CERISE_API_FILES/miniconda/bin/cwltool
     slots-per-node: 4
