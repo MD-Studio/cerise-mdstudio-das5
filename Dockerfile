@@ -10,6 +10,5 @@ COPY known_hosts /home/cerise/.ssh/
 RUN chown -R cerise:cerise /home/cerise/.ssh/known_hosts
 
 # Download CWL Steps
-RUN mkdir /home/cerise/scripts
-COPY scripts/get_cwl_steps.sh /home/cerise/scripts
+RUN wget https://raw.githubusercontent.com/MD-Studio/cerise-mdstudio-share-data/master/scripts/get_cwl_steps.sh -P  /home/cerise/scripts
 RUN /home/cerise/scripts/get_cwl_steps.sh
