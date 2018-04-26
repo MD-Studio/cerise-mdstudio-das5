@@ -1,7 +1,6 @@
 #!/bin/bash
 
 CERISE_API_FILES="${1}"
-CERISE_DATA="cerise-mdstudio-share-data"
 
 # Install share data and miniconda
 INSTALL_SCRIPT="$CERISE_API_FILES/mdstudio/bin/install_share.sh"
