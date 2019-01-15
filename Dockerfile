@@ -1,4 +1,4 @@
-FROM mdstudio/cerise-mdstudio-base:0.3.0
+FROM mdstudio/cerise-mdstudio-base:0.3.1
 
 RUN apt-get update && apt-get install -y wget
 
